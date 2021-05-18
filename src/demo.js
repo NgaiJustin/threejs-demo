@@ -5,7 +5,6 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import * as dat from "dat.gui";
-import html2canvas from "html2canvas";
 
 let mixer;
 let strDownloadMime = "image/octet-stream";
