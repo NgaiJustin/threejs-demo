@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+    font-family: "Poppins";
+    background: rgb(24, 24, 24);
+}
+
+h1 {
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.webgl {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    mix-blend-mode: exclusion;
+}
+
+.holder {
+    border: 10px dashed #ccc;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.holder:hover {
+    border: 10px dashed #333;
+}
