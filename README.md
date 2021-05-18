@@ -2,10 +2,11 @@
 
 ## Overview
 
--   Drag and drop bin - simply drag and drop a .glb file anywhere in the viewport to load the
+-   Drag and drop bin - simply drag and drop a .glb file anywhere in the viewport to load the model
 -   Left click and drag to rotate
 -   Right click and drag to pan
 -   Scroll to zoom
+-   Click the save button in the lower right corner to download a snapshot of the render
 
 ## Setup
 
