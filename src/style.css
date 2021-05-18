@@ -16,6 +16,22 @@ h1 {
     color: white;
 }
 
+button {
+    position: absolute;
+    transform: translate(80vw, 90vh);
+    border-radius: 25px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+
+    background-color: #3c4b48;
+    color: #b4d0cb;
+
+    z-index: 1;
+}
+
 .webgl {
     height: 100vh;
     position: absolute;
@@ -23,13 +39,14 @@ h1 {
     left: 0;
     outline: none;
     mix-blend-mode: exclusion;
+    z-index: 0;
 }
 
 .holder {
     border: 10px dashed #ccc;
-    width: 150px;
-    height: 150px;
-    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    margin: 5px auto;
 }
 
 .holder:hover {

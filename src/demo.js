@@ -5,8 +5,10 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import * as dat from "dat.gui";
+import html2canvas from "html2canvas";
 
 let mixer;
+let strDownloadMime = "image/octet-stream";
 
 const gui = new dat.GUI();
 
@@ -49,6 +51,7 @@ const renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: canvas,
     alpha: true,
+    preserveDrawingBuffer: true, //For screenshot generation
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -170,3 +173,40 @@ window.addEventListener(
     },
     false
 );
+
+/**
+ * Save functionality
+ */
+const saveButton = document.getElementById("save");
+
+saveButton.addEventListener("click", (event) => {
+    console.log("hello");
+    saveAsImage();
+});
+
+function saveAsImage() {
+    let imgData, imgNode;
+
+    try {
+        let strMime = "image/jpeg";
+        imgData = renderer.domElement.toDataURL(strMime);
+
+        saveFile(imgData.replace(strMime, strDownloadMime), "download.jpg");
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+}
+
+const saveFile = function (strData, filename) {
+    const link = document.createElement("a");
+    if (typeof link.download === "string") {
+        document.body.appendChild(link); //Firefox requires the link to be in the body
+        link.download = filename;
+        link.href = strData;
+        link.click();
+        document.body.removeChild(link); //remove the link when done
+    } else {
+        location.replace(uri);
+    }
+};
